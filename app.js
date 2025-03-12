@@ -22,6 +22,12 @@ app.get("/pokemons", async (request, response) => {
     response.json(result.rows);
 });
 
+app.get("/pokemons/:id", async (request, response) => {
+    const id = request.params.id;
+    const result = await pool.query("SELECT * FROM pokemons WHERE id=$1", [id]);
+    response.json(result.rows[0]);
+});
+
 app.post("/pokemons", async (request, response) => {
     const { nome, peso, ataque, defesa, velocidade, habilidade1, habilidade2 } = request.body;
     const result = await pool.query("INSERT INTO pokemons (nome, peso, ataque, defesa, velocidade, habilidade1, habilidade2) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *", [nome, peso, ataque, defesa, velocidade, habilidade1, habilidade2]);
