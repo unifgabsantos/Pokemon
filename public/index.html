@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Cadastro de Pokémons</h1>
+    <form id="form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="peso">Peso:</label>
+        <input type="number" id="peso" name="peso" required>
+        <label for="ataque">Ataque:</label>
+        <input type="number" id="ataque" name="ataque" required>
+        <label for="defesa">Defesa:</label>
+        <input type="number" id="defesa" name="defesa" required>
+        <label for="velocidade">Velocidade:</label>
+        <input type="number" id="velocidade" name="velocidade" required>
+        <label for="habilidade1">Habilidade 1:</label>
+        <input type="text" id="habilidade1" name="habilidade1" required>
+        <label for="habilidade2">Habilidade 2:</label>
+        <input type="text" id="habilidade2" name="habilidade2" required>
+        <button type="submit">Salvar Pokémon</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Peso</th>
+                <th>Ataque</th>
+                <th>Defesa</th>
+                <th>Velocidade</th>
+                <th>Habilidade 1</th>
+                <th>Habilidade 2</th>
+            </tr>
+        </thead>
+        <tbody id="pokemon-list">
+        </tbody>
+    </table>
+</body>
+<script src="script.js"></script>
+
+</html>
