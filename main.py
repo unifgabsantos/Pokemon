@@ -9,7 +9,7 @@ def getPokemons()->dict:
     response = requests.get(baseURL)
     return response.json()
 
-def getPokemonById(id:str)->dict:
+def getPokemonById(id:str|int)->dict:
     """
         Get a pokemon by id.
     Parameters:
@@ -31,7 +31,7 @@ def createPokemon(pokemon:dict)->dict:
     response = requests.post(baseURL, json=pokemon)
     return response.json()
 
-def updatePokemon(id:str, pokemon:dict)->dict:
+def updatePokemon(id:str|int, pokemon:dict)->dict:
     """
         Update a pokemon.
     Parameters:
@@ -43,7 +43,7 @@ def updatePokemon(id:str, pokemon:dict)->dict:
     response = requests.put(baseURL+str(id), json=pokemon)
     return response.json()
 
-def deletePokemon(id:str)->dict:
+def deletePokemon(id:str|int)->dict:
     """
         Delete a pokemon.
     Parameters:
